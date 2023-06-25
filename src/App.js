@@ -49,15 +49,22 @@ function App() {
       "source": "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
     }
   ]
+  const handleButtonClick =(event)=> {
+    const audioElement = event.target.querySelector("audio");
+    if (audioElement) {
+      audioElement.currentTime = 0;
+      audioElement.play();
+    }
+  };
   return (
     <div id ="drum-machine" className="App">
      <h1>Online drum keyboard</h1>
      <div id="display">
      {data.map(item => {
           return (
-            <button className="drum-pad" id={item.id} key={item.id}>
-              {item.key}
+            <button className="drum-pad" id={item.id} key={item.id} onClick={handleButtonClick}>
               <audio className = "clip" id={item.key} src={item.source}></audio>
+              <h1>{item.key}</h1>
             </button>
           );
         })}
