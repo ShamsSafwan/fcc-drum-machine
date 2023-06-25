@@ -18,6 +18,24 @@
   color: white;
 }
 
+#drum-machine {
+  text-align: center;
+}
+#intro {
+  margin-bottom: 20vh;
+}
+#display {
+  
+  margin: 0 auto;
+  padding: 5px;
+  background-color:blue;
+  max-width: fit-content;
+}
+
+.drum-pad {
+  height: 30vh;
+  
+}
 .App-link {
   color: #61dafb;
 }

@@ -58,7 +58,7 @@ function App() {
   };
   return (
     <div id ="drum-machine" className="App">
-     <h1>Online drum keyboard</h1>
+     <h1 id ="intro">Online drum keyboard</h1>
      <div id="display">
      {data.map(item => {
           return (
