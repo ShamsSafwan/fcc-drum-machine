@@ -25,16 +25,18 @@
   margin-bottom: 20vh;
 }
 #display {
-  
+  border-radius: 5px;
+  border: 5px solid blueviolet;
   margin: 0 auto;
   padding: 5px;
-  background-color:blue;
+  background-color:#61dafb;
   max-width: fit-content;
+  padding: 1rem;
 }
 
 .drum-pad {
   height: 30vh;
-  
+  width: 10vh;
 }
 .App-link {
   color: #61dafb;
