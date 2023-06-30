@@ -2,7 +2,7 @@
   "name": "codespaces-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://shmssafwan.github.io/fccdrummachine",
+  "homepage": "https://shmssafwan.github.io/fcc-drum-machine",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
