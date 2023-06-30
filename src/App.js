@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 function App() {
-
+  const [text,setText]= useState("wait for it....")
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => {
@@ -68,9 +68,16 @@ function App() {
   ]
   const handleButtonClick =(event)=> {
     const audioElement = event.target.querySelector("audio");
+    
     if (audioElement) {
       audioElement.currentTime = 0;
       audioElement.play();
+      const buttonId = parseInt(event.target.id);
+    const item = data.find((item) => item.id === buttonId);
+    if (item) {
+      const buttonText = item.text;
+      setText(buttonText);
+    }
     }
   };
 
@@ -82,7 +89,10 @@ function App() {
     if (sound) {
         sound.currentTime = 0;
         sound.play();
-     
+        const item = data.find((item) => item.key === key);
+        if (item) {
+          setText(item.text);
+        }
     }
   }
 
@@ -92,6 +102,7 @@ function App() {
     <div id ="drum-machine" className="App">
      <h1 id ="intro">Online drum keyboard</h1>
      <div id="display">
+      <h3>{text}</h3>
      {data.map(item => {
           return (
             <button className="drum-pad" id={item.id} key={item.id} onClick={handleButtonClick} >
@@ -99,7 +110,8 @@ function App() {
               <h1>{item.key}</h1>
             </button>
           );
-        })}
+        })
+      }
      </div>
     </div>
   );
